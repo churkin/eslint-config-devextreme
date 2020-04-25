@@ -36,7 +36,27 @@ Contains special words that should be ignored.
   - [spellcheck](https://github.com/aotaduy/eslint-plugin-spellcheck)
 
 ### Renovation Declarations
-*Not implemented yet*
+Use for the DevExtreme renovation declaration tsx
+- How to use\
+    &nbsp; &nbsp; Add this to your *.eslintrc*:\
+    &nbsp; &nbsp; `"extends": ["eslint-config-devextreme/renovation-declarations"]` or `"extends": ["devextreme/renovation-declarations"]`
+
+- Extends
+  - `devextreme/typescript` [doc](#typescript)
+
+- Exceptions
+  - Declarations used for generate target components in the development mode
+    ```javasxript 
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
+    ```
+  - Declaration should contain two classes - component class and props class 
+    ```javasxript 
+    'max-classes-per-file': ['error', 2]
+    ```
+  - Declaration is not a real React component and doesn't need it
+    ```javasxript
+    'react/react-in-jsx-scope': ['off']
+    ```
 
 ### Jest Tests
 - How to use\
