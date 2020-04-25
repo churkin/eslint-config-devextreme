@@ -5,14 +5,12 @@ module.exports = {
     },
     plugins: [
         'jest',
-        'jest-formatting',
-        '@typescript-eslint'
+        'jest-formatting'
     ],
     extends: [
         'plugin:jest/recommended',
         'plugin:jest-formatting/recommended',
-        'plugin:@typescript-eslint/recommended',
-        'airbnb-typescript'
+        'devextreme/typescript'
     ],
     rules: {
         // Use devDependencies modules in the tests

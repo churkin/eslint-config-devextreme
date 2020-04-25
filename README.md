@@ -7,6 +7,7 @@ You got to the repository that collect all style configurations used by DevExtre
 ## Configurations
 
   1. [TypeScript](#typescript)
+  1. [Spell Check](#spell-check)
   1. [Renovation Declarations](#renovation-declarations)
   1. [Jest Tests](#jest-tests)
   1. [QUnit Tests](#qunit-tests)
@@ -14,7 +15,25 @@ You got to the repository that collect all style configurations used by DevExtre
 
 
 ### TypeScript
-*Not implemented yet*
+- How to use\
+    &nbsp; &nbsp; Add this to your *.eslintrc*:\
+    &nbsp; &nbsp; `"extends": ["eslint-config-devextreme/typescript"]` or `"extends": ["devextreme/typescript"]`
+- Plugins
+  - [@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
+  
+- Extends
+  - `plugin:@typescript-eslint/recommended` [doc](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#recommended-configs)
+  - `airbnb-typescript` [doc](https://github.com/iamturns/eslint-config-airbnb-typescript)
+  
+
+### Spell Check
+Contains special words that should be ignored.
+- How to use\
+    &nbsp; &nbsp; Add this to your *.eslintrc*:\
+    &nbsp; &nbsp; `"extends": ["eslint-config-devextreme/spell-check"]` or `"extends": ["devextreme/spell-check"]`
+
+- Plugins
+  - [spellcheck](https://github.com/aotaduy/eslint-plugin-spellcheck)
 
 ### Renovation Declarations
 *Not implemented yet*
@@ -31,13 +50,10 @@ You got to the repository that collect all style configurations used by DevExtre
 - Plugins
   - [jest](https://github.com/jest-community/eslint-plugin-jest)
   - [jest-formatting](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
-  - [@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
   
 - Extends
   - `plugin:jest/recommended` [doc](https://github.com/jest-community/eslint-plugin-jest#recommended)
   - `plugin:jest-formatting/recommended`
-  - `plugin:@typescript-eslint/recommended` [doc](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#recommended-configs)
-  - `airbnb-typescript` [doc](https://github.com/iamturns/eslint-config-airbnb-typescript)
   
 - Exceptions
   - Use devDependencies modules in the tests
