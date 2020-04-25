@@ -4,7 +4,7 @@ You got to the repository that collect all style configurations used by DevExtre
 
 > **Note**: We add some exceptions only as a last resort. Please do not use your own cofiguration, choose the one that suits you from the list below. Add new configuration if you are 100% sure that none of the existing does not fit you.
 
-## Configurations
+## List of Configurations
 
   1. [TypeScript](#typescript)
   1. [Spell Check](#spell-check)
@@ -14,7 +14,7 @@ You got to the repository that collect all style configurations used by DevExtre
   1. [TestCafe Tests](#testcafe-tests)
 
 
-### TypeScript
+## TypeScript
 - How to use\
     &nbsp; &nbsp; Add this to your *.eslintrc*:\
     &nbsp; &nbsp; `"extends": ["eslint-config-devextreme/typescript"]` or `"extends": ["devextreme/typescript"]`
@@ -26,7 +26,7 @@ You got to the repository that collect all style configurations used by DevExtre
   - `airbnb-typescript` [doc](https://github.com/iamturns/eslint-config-airbnb-typescript)
   
 
-### Spell Check
+## Spell Check
 Contains special words that should be ignored.
 - How to use\
     &nbsp; &nbsp; Add this to your *.eslintrc*:\
@@ -35,7 +35,7 @@ Contains special words that should be ignored.
 - Plugins
   - [spellcheck](https://github.com/aotaduy/eslint-plugin-spellcheck)
 
-### Renovation Declarations
+## Renovation Declarations
 Use for the DevExtreme renovation declaration tsx
 - How to use\
     &nbsp; &nbsp; Add this to your *.eslintrc*:\
@@ -58,7 +58,7 @@ Use for the DevExtreme renovation declaration tsx
     'react/react-in-jsx-scope': ['off']
     ```
 
-### Jest Tests
+## Jest Tests
 - How to use\
     &nbsp; &nbsp; Add this to your *.eslintrc*:\
     &nbsp; &nbsp; `"extends": ["eslint-config-devextreme/jest"]` or `"extends": ["devextreme/jest"]`
@@ -93,7 +93,7 @@ Use for the DevExtreme renovation declaration tsx
     'jsx-a11y/no-access-key': 'off'
     ```
 
-### QUnit Tests
+## QUnit Tests
 - How to use\
     &nbsp; &nbsp; Add this to your *.eslintrc*:\
     &nbsp; &nbsp; `"extends": ["eslint-config-devextreme/qunit"]` or `"extends": ["devextreme/qunit"]`
@@ -118,7 +118,7 @@ Use for the DevExtreme renovation declaration tsx
     'qunit/no-setup-teardown': 'error'
     ```
 
-### TestCafe Tests
+## TestCafe Tests
 *Not implemented yet*
 
 
