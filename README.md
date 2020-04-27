@@ -1,8 +1,8 @@
-# ESLint configuration collection for the DevExtreme source code
+# ESLint Configurations for the DevExtreme Source Code
 
-You got to the repository that collect all style configurations used by DevExtreme development team. We've implemented cofigurations for the most typical cases. All configs based on the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) as a most popular at the moment.
+This repository collects ESLint configurations that enforce the code style used by the DevExtreme development team. These configurations are based on the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) and cover most frequently encountered cases.
 
-> **Note**: We add some exceptions only as a last resort. Please do not use your own cofiguration, choose the one that suits you from the list below. Add new configuration if you are 100% sure that none of the existing does not fit you.
+> **Note**: Adding new configurations is possible but discouraged. Double-check that none of the existing configurations fits for your case before you add a new configuration.
 
 ## List of Configurations
 
@@ -15,109 +15,130 @@ You got to the repository that collect all style configurations used by DevExtre
 
 ## TypeScript
 
-- **How to use**\
-    &nbsp; &nbsp; Add to your *.eslintrc*: `'extends': ['devextreme/typescript']`
+- **Usage**    
+    Add the following line to your *.eslintrc* file:
+    
+    ```javascript
+    'extends': ['devextreme/typescript']
+    ```
 
-- **Plugins**
+- **Required plugins**
   - [@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
   
-- **Extends**
-  - `plugin:@typescript-eslint/recommended` [doc](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#recommended-configs)
-  - `airbnb-typescript` [doc](https://github.com/iamturns/eslint-config-airbnb-typescript)
+- **Extended plugins and configurations**
+  - [`plugin:@typescript-eslint/recommended`](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#recommended-configs)
+  - [`airbnb-typescript`](https://github.com/iamturns/eslint-config-airbnb-typescript)
   
 ## Spell Check
 
-Contains special words that should be ignored.
+Lists words that the spell check should ignore.
 
-- **How to use**\
-    &nbsp; &nbsp; Add to your *.eslintrc*: `"extends": ["devextreme/spell-check"]`
+- **Usage**
+    Add the following line to your *.eslintrc* file:
+    
+    ```javascript
+    "extends": ["devextreme/spell-check"]
+    ```
 
-- **Plugins**
+- **Required plugins**
   - [spellcheck](https://github.com/aotaduy/eslint-plugin-spellcheck)
 
 ## Renovation Declarations
 
-Use for the renovation declarations.
+- **Usage**    
+    Add the following line to your *.eslintrc* file:
+    
+    ```javascript
+    'extends': ['devextreme/renovation-declarations']
+    ```
+    
+- **Extended configurations**
+  - [`devextreme/typescript`](#typescript)
 
-- **How to use**\
-    &nbsp; &nbsp; Add to your *.eslintrc*: `'extends': ['devextreme/renovation-declarations']`
-- **Extends**
-  - `devextreme/typescript` [doc](#typescript)
+- **Overrides**
 
-- **Exceptions**
-  - Declarations used for generate target components in the development mode
+  - Allow importing devDependencies when in development mode:
 
-    ```javasxript
+    ```javascript
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
     ```
 
-  - Declaration should contain two classes - component class and props class
+  - Allow two classes (component class and props class) in one file:
   
-    ```javasxript
+    ```javascript
     'max-classes-per-file': ['error', 2]
     ```
 
-  - Declaration is not a real React component and doesn't need it
+  - Do not require React. Declarations do not need it because they are not proper React components:
   
-    ```javasxript
+    ```javascript
     'react/react-in-jsx-scope': ['off']
     ```
 
 ## Jest Tests
 
-- **How to use**\
-    &nbsp; &nbsp; Add to your *.eslintrc*: `'extends': ['devextreme/jest']`
+- **Usage**    
+    Add the following line to your *.eslintrc* file:
+    
+    ```javascript
+    'extends': ['devextreme/jest']
+    ```
 
 - **Environment**
-  - `node` (Node.js global variables and Node.js scoping)
+  - `node` (Node.js global variables and scope)
   - `jest` (Jest global variables)
   
-- **Plugins**
+- **Required plugins**
   - [jest](https://github.com/jest-community/eslint-plugin-jest)
   - [jest-formatting](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
   
-- **Extends**
-  - `plugin:jest/recommended` [doc](https://github.com/jest-community/eslint-plugin-jest#recommended)
+- **Extended plugins**
+  - [`plugin:jest/recommended`](https://github.com/jest-community/eslint-plugin-jest#recommended)
   - `plugin:jest-formatting/recommended`
   
-- **Exceptions**
-  - Use devDependencies modules in the tests
+- **Overrides**
+
+  - Allow using devDependencies in the tests:
   
-    ```javasxript
+    ```javascript
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
     ```
 
-  - Create temporary JSX components in the tests without props validation
+  - Disable props validation for temporary JSX components created during the tests:
   
-    ```javasxript
+    ```javascript
     'react/prop-types': ['error', { skipUndeclared: true }]
     ```
 
-  - Allow to use props spreading for the JSX components
+  - Allow using props spreading in the temporary JSX components:
   
-    ```javasxript
+    ```javascript
     'react/jsx-props-no-spreading': 'off'
     ```
 
-  - Allow to define widget's *accessKey* attribute
+  - Allow defining the widget's `accessKey` attribute:
   
-    ```javasxript
+    ```javascript
     'jsx-a11y/no-access-key': 'off'
     ```
 
 ## QUnit Tests
 
-- **How to use**\
-    &nbsp; &nbsp; Add to your *.eslintrc*: `'extends': ['devextreme/qunit']`
+- **Usage**    
+    Add the following line to your *.eslintrc* file:
+    
+    ```javascript
+    'extends': ['devextreme/qunit']
+    ```
 
 - **Environment**
   - `qunit` (QUnit global variables)
   - `browser` (Browser global variables)
   
-- **Plugins**
+- **Required plugins**
   - [qunit](https://github.com/platinumazure/eslint-plugin-qunit)
   
-- **Exceptions**
+- **Overrides**
   
     ```javascript
     'qunit/assert-args': 'error',
@@ -133,4 +154,4 @@ Use for the renovation declarations.
 
 ## TestCafe Tests
 
-*Not implemented yet*
+Coming soon...
