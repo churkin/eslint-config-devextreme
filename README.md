@@ -98,7 +98,7 @@ Lists words that the spell check should ignore.
   
 - **Overrides**
 
-  - Allow using devDependencies in the tests:
+  - Allow the use of devDependencies in the tests:
   
     ```javascript
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
@@ -110,7 +110,7 @@ Lists words that the spell check should ignore.
     'react/prop-types': ['error', { skipUndeclared: true }]
     ```
 
-  - Allow using props spreading in the temporary JSX components:
+  - Allow the use of props spreading in the temporary JSX components:
   
     ```javascript
     'react/jsx-props-no-spreading': 'off'
