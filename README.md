@@ -57,7 +57,7 @@ Lists words that the spell check should ignore.
 
 - **Overrides**
 
-  - Allow importing devDependencies when in development mode:
+  - Allow devDependencies to be imported when in development mode:
 
     ```javascript
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
@@ -69,7 +69,7 @@ Lists words that the spell check should ignore.
     'max-classes-per-file': ['error', 2]
     ```
 
-  - Do not require React. Declarations do not need it because they are not proper React components:
+  - Disable React dependency validation. Declarations do not require this dependency, since they are not proper React components. 
   
     ```javascript
     'react/react-in-jsx-scope': ['off']
